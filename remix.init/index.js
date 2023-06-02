@@ -11,9 +11,14 @@ const escapeRegExp = (string) =>
 const getRandomString = (length) => crypto.randomBytes(length).toString("hex");
 
 const main = async ({ isTypeScript, rootDirectory }) => {
+  console.log("isTypeScript", isTypeScript);
+  console.log("rootDirectory", rootDirectory);
   if (!isTypeScript) {
     // not throwing an error because the stack trace doesn't do anything to help the user
-    throw `Sorry, this template only supports TypeScript. Please run the command again and select "TypeScript"`;
+    // throw `Sorry, this template only supports TypeScript. Please run the command again and select "TypeScript"`;
+    console.log(
+      `Sorry, this template only supports TypeScript. Please run the command again and select "TypeScript"`
+    );
   }
   const { orgName } = await inquirer.prompt([
     {
